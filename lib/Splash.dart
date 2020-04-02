@@ -2,16 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:mytask/MyHome.dart';
 
 import 'Home.dart';
+
 class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
 }
 
 class _SplashState extends State<Splash> {
-
   @override
   void initState() {
     _loadData();
@@ -21,17 +20,15 @@ class _SplashState extends State<Splash> {
   Future<Timer> _loadData() async {
     return new Timer(Duration(seconds: 4), _onDoneLoading);
   }
-  _onDoneLoading() async {
 
+  _onDoneLoading() async {
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) =>Home() ,
+          builder: (context) => Home(),
         ),
-            (Route<dynamic> route) => false);
-
+        (Route<dynamic> route) => false);
   }
-
 
   @override
   Widget build(BuildContext context) {
